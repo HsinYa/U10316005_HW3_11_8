@@ -6,7 +6,7 @@ public class Account {
 	private double balance = 0;
 	private double annualInterestRate = 0;
 	private java.util.Date dateCreated ;
-
+	private java.util.ArrayList transcations = new java.util.ArrayList();
 	
 	//Constructors
 	public Account(){
@@ -40,11 +40,13 @@ public class Account {
 		return annualInterestRate;
 	}
 	
-	//The accessor method for name
+	//The accessor methods for name, transcations
 	public String getName(){
 		return name;
 	}
-
+	public java.util.ArrayList getTranscations(){
+		return transcations;
+	}
 	
 	//The accessor method for dateCreated
 	public java.util.Date getDateCreated(){
@@ -62,10 +64,12 @@ public class Account {
 	//Withdraw a specified amount from the account
 	public void withdraw(double amount){
 		balance -= amount;
+		transcations.add(new Transaction('W',amount,balance,""));
 	}
 	//Deposit a specified amount to the account
 	public void deposit(double amount){
 		balance += amount;
+		transcations.add(new Transaction('D',amount,balance,""));
 	}
 	
 }
