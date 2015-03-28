@@ -2,19 +2,22 @@
 public class Account {
 	//Data fields
 	private int id = 0;
+	private String name;
 	private double balance = 0;
 	private double annualInterestRate = 0;
-	private java.util.Date dateCreated;
+	private java.util.Date dateCreated ;
+
 	
 	//Constructors
 	public Account(){
 		dateCreated = new java.util.Date();
 	}
-	public Account(int id,double balance){
+	public Account(String name,int id,double balance){
+		this.name = name;
 		this.id = id;
 		this.balance = balance;
 		dateCreated = new java.util.Date();
-	}
+	}   
 	
 	//Accessor and mutator methods for id, balance, annualInterestRate
 	public void setId(int id){
@@ -36,6 +39,12 @@ public class Account {
 	public double getAnnualInterestRate(){
 		return annualInterestRate;
 	}
+	
+	//The accessor method for name
+	public String getName(){
+		return name;
+	}
+
 	
 	//The accessor method for dateCreated
 	public java.util.Date getDateCreated(){
